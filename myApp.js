@@ -11,6 +11,10 @@ app.get('/',(req,res)=>{
 })
 
 
+app.get('/json',(req,res)=>{
+    res.status(200).send({"message": "Hello json"});
+})
+
 
 
 
