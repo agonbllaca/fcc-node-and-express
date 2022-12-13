@@ -1,4 +1,5 @@
 const path = require('path');
+const dotenv = require('dotenv').config();
 let express = require('express');
 let app = express();
 
@@ -12,7 +13,8 @@ app.get('/',(req,res)=>{
 
 
 app.get('/json',(req,res)=>{
-    res.status(200).send({"message": "Hello json"});
+    let message = process.env.MESSAGE_STYLE=='uppercase'? "HELLO JSON" : "Hello json";
+    res.status(200).send({message});
 })
 
 
